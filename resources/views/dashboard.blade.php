@@ -6,7 +6,7 @@
     <div class="container-fluid mt--7">
         <div class="row">
             <div class="col-xl-8 mb-5 mb-xl-0">
-                <div class="card bg-gradient-default shadow">
+                {{--<div class="card bg-gradient-default shadow">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
@@ -38,10 +38,10 @@
                             <canvas id="chart-sales" class="chart-canvas"></canvas>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
             <div class="col-xl-4">
-                <div class="card shadow">
+                {{--<div class="card shadow">
                     <div class="card-header bg-transparent">
                         <div class="row align-items-center">
                             <div class="col">
@@ -56,7 +56,7 @@
                             <canvas id="chart-orders" class="chart-canvas"></canvas>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
         <div class="row mt-5">
@@ -65,10 +65,10 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Page visits</h3>
+                                <h3 class="mb-0">Todos los Cursos</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                                <a href="#!" class="btn btn-sm btn-primary">Ver todos</a>
                             </div>
                         </div>
                     </div>
@@ -77,16 +77,16 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">Page name</th>
-                                    <th scope="col">Visitors</th>
-                                    <th scope="col">Unique users</th>
-                                    <th scope="col">Bounce rate</th>
+                                    <th scope="col">Curso</th>
+                                    <th scope="col">Estudiantes</th>
+                                    <th scope="col">Areas</th>
+                                    <th scope="col">Aceptación</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th scope="row">
-                                        /argon/
+                                        Python
                                     </th>
                                     <td>
                                         4,569
@@ -100,7 +100,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        /argon/index.html
+                                        Java
                                     </th>
                                     <td>
                                         3,985
@@ -114,7 +114,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        /argon/charts.html
+                                        Php
                                     </th>
                                     <td>
                                         3,513
@@ -128,7 +128,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        /argon/tables.html
+                                        Javascript
                                     </th>
                                     <td>
                                         2,050
@@ -142,7 +142,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        /argon/profile.html
+                                        Lenguajes
                                     </th>
                                     <td>
                                         1,795
@@ -164,10 +164,10 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Social traffic</h3>
+                                <h3 class="mb-0">Estudiantes</h3>
                             </div>
                             <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                                <a href="#!" class="btn btn-sm btn-primary">Ver todos</a>
                             </div>
                         </div>
                     </div>
@@ -176,20 +176,20 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">Referral</th>
-                                    <th scope="col">Visitors</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Curso</th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <th scope="row">
-                                        Facebook
+                                        Juan Pablo
                                     </th>
                                     <td>
-                                        1,480
+                                        Python
                                     </td>
-                                    <td>
+                                   {{-- <td>
                                         <div class="d-flex align-items-center">
                                             <span class="mr-2">60%</span>
                                             <div>
@@ -198,16 +198,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>
+                                    </td>--}}
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        Facebook
+                                        Juan Piguave
                                     </th>
                                     <td>
-                                        5,480
+                                        Java
                                     </td>
-                                    <td>
+                                    {{--<td>
                                         <div class="d-flex align-items-center">
                                             <span class="mr-2">70%</span>
                                             <div>
@@ -216,16 +216,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>
+                                    </td>--}}
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        Google
+                                        Pedro Jose
                                     </th>
                                     <td>
-                                        4,807
+                                        Php
                                     </td>
-                                    <td>
+                                   {{-- <td>
                                         <div class="d-flex align-items-center">
                                             <span class="mr-2">80%</span>
                                             <div>
@@ -234,16 +234,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>
+                                    </td>--}}
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        Instagram
+                                       Carlos Vera
                                     </th>
                                     <td>
-                                        3,678
+                                        Php
                                     </td>
-                                    <td>
+                                    {{--<td>
                                         <div class="d-flex align-items-center">
                                             <span class="mr-2">75%</span>
                                             <div>
@@ -252,16 +252,16 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>
+                                    </td>--}}
                                 </tr>
                                 <tr>
                                     <th scope="row">
-                                        twitter
+                                        Maria Paula
                                     </th>
                                     <td>
-                                        2,645
+                                        Java
                                     </td>
-                                    <td>
+                                   {{-- <td>
                                         <div class="d-flex align-items-center">
                                             <span class="mr-2">30%</span>
                                             <div>
@@ -270,7 +270,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>
+                                    </td>--}}
                                 </tr>
                             </tbody>
                         </table>
