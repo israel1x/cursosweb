@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
             'id' => 2,
             'name' => 'Juan',
             'lastname' => 'Pablo',
+            'tipoPerfil_id' => 1,
             'email' => 'juanpablo98palo@gmail.com',
            // 'email_verified_at' => now(),
             'password' => Hash::make('cursos'),

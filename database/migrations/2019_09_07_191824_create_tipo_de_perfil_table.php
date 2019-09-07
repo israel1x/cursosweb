@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Permisos extends Migration
+class CreateTipoDePerfilTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,11 @@ class Permisos extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tipoPerfil', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('perfil',60)->unique();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class Permisos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tipoPerfil');
     }
 }

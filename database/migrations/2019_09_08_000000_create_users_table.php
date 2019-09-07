@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('lastname');
+            $table->integer('tipoPerfil_id')->unsigned();
+            $table->foreign('tipoPerfil_id')->references('id')->on('tipoPerfil');
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('IdUsuarioCreacion');
