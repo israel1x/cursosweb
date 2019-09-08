@@ -18,5 +18,5 @@ class TipoPerfil extends Model
 
     public function users() {
         return $this->hasMany(User::class, 'tipoPerfil_id');
-    } 
+    }
 }
