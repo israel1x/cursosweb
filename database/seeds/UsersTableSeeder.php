@@ -13,16 +13,25 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        // CONSULATA MANUAL
+        //$idtipoperfil = DB::select('SELECT id FROM tipoPerfil WHERE perfil = ?', ["Admin"]);
+
+        //$idtipoperfil = DB::table('tipoPerfil')->select('id')->take(1)->get();
+        $idtipoperfil = DB::table('tipoPerfil')->select('id')->first();
+
+        //$idtipoperfil = DB::table('tipoPerfil')->where('perfil', 'Admin')->value('id'); ***
+
         DB::table('users')->insert([
-            'id' => 2,
+            'id' => 1,
             'name' => 'Juan',
             'lastname' => 'Pablo',
-            'tipoPerfil_id' => 1,
+            //'tipoPerfil_id' => $idtipoperfil ****,
+            'tipoPerfil_id' => $idtipoperfil->id,
             'email' => 'juanpablo98palo@gmail.com',
            // 'email_verified_at' => now(),
             'password' => Hash::make('cursos'),
-            'IdUsuarioCreacion' =>  2 ,
-            'IdUsuarioModificacion' => 2 ,
+            'IdUsuarioCreacion' =>  1 ,
+            'IdUsuarioModificacion' => 1 ,
             'fechaCreacion' => Carbon::now() ,
             'fechaModificacion' => Carbon::now(),
 

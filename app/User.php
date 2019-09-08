@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','tipoPerfil_id'
     ];
 
     /**
@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public $timestamps = false;
+
+    public function isAdmin() {
+        return $this->tipoPerfil_id === 1;
+    }
+
+    public function quetipoPerfil() {
+        return $this->belongsTo(TipoPerfil::class, 'tipoPerfil_id');
+    }
 }

@@ -12,6 +12,8 @@ class TipoPerfilSeeder extends Seeder
      */
     public function run()
     {
+
+
         DB::table('tipoPerfil')->insert([
             'perfil' => 'Admin',
         ]);
