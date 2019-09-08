@@ -39,9 +39,17 @@ class UserController extends Controller
      */
     public function store(UserRequest $request, User $model)
     {
-        $model->create($request->merge(['password' => Hash::make($request->get('password'))])->all());
+        //$data = $request->all();
+        //dd($request);
 
-        return redirect()->route('user.index')->withStatus(__('User successfully created.'));
+        $model->create($request->merge(['password' => Hash::make($request->get('password')),
+            'IdUsuarioCreacion' => 1,
+            'IdUsuarioModificacion' => 1,
+            'fechaCreacion' => '2019-09-08 21:51:20',
+            'fechaModificacion' => '2019-09-08 21:51:20'
+        ] )->all());
+
+        return redirect()->route('user.index')->withStatus(__('Usuario Creado Exitosamente.'));
     }
 
     /**
@@ -69,7 +77,7 @@ class UserController extends Controller
                 ->except([$request->get('password') ? '' : 'password']
         ));
 
-        return redirect()->route('user.index')->withStatus(__('User successfully updated.'));
+        return redirect()->route('user.index')->withStatus(__('Se Guardaron los cambios del usuario.'));
     }
 
     /**
@@ -82,6 +90,6 @@ class UserController extends Controller
     {
         $user->delete();
 
-        return redirect()->route('user.index')->withStatus(__('User successfully deleted.'));
+        return redirect()->route('user.index')->withStatus(__('Usuario Borrado.'));
     }
 }

@@ -47,7 +47,7 @@
                                     <tr>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->lastname }}</td>
-                                        <td>{{ $user->tipoPerfil_id }}</td>
+                                        <td>{{ $user->quetipoPerfil->perfil }}</td>
                                         <td>
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
