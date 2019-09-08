@@ -61,7 +61,8 @@
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                                     @if ($user->id != auth()->id())
                                                         <form action="{{ route('user.destroy', $user) }}" method="post">
-                                                            @csrf
+{{--                                                            @csrf--}}
+                                                            {{ csrf_field() }}
                                                             @method('delete')
                                                             
                                                             <a class="dropdown-item" href="{{ route('user.edit', $user) }}">{{ __('Edit') }}</a>

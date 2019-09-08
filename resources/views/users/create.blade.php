@@ -19,7 +19,8 @@
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('user.store') }}" autocomplete="off">
-                            @csrf
+{{--                            @csrf--}}
+                            {{ csrf_field() }}
                             
                             <h6 class="heading-small text-muted mb-4">{{ __('User information') }}</h6>
                             <div class="pl-lg-4">
