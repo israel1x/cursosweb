@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
 @section('content')
-    @include('layouts.headers.cards')
+    @include('layouts.headers.cardsusers')
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -33,9 +33,12 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                                 <tr>
-                                    <th scope="col">{{ __('Name') }}</th>
+                                    <th scope="col">{{ __('Nombres') }}</th>
+                                    <th scope="col">{{ __('Apellidos') }}</th>
+                                    <th scope="col">{{ __('Tipo') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
-                                    <th scope="col">{{ __('Creation Date') }}</th>
+                                   {{-- <th scope="col">{{ __('Fecha Creación') }}</th>
+                                    <th scope="col">{{ __('Fecha Modificación') }}</th>--}}
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
@@ -43,10 +46,13 @@
                                 @foreach ($users as $user)
                                     <tr>
                                         <td>{{ $user->name }}</td>
+                                        <td>{{ $user->lastname }}</td>
+                                        <td>{{ $user->tipoPerfil_id }}</td>
                                         <td>
                                             <a href="mailto:{{ $user->email }}">{{ $user->email }}</a>
                                         </td>
-                                        <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
+                                       {{-- <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
+                                        <td>{{ $user->updated_at->format('d/m/Y H:i') }}</td>--}}
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
