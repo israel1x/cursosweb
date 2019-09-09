@@ -42,6 +42,22 @@ class UserController extends Controller
         //$data = $request->all();
         //dd($request);
 
+        request()->validate([
+            'name'     => 'required|min:3|max:20',
+            'lastname' => 'required|min:3|max:20',
+            'tipoPerfil_id' => 'required',
+            'email'    => 'required|email|unique:users',
+            'password' => 'required|min:6',
+            'confirm_password' => 'required|min:6|max:20|same:password',
+        ], [
+            'name.required' => 'El Nombre es requerido',
+            'name.min' => 'El nombre must be at least 2 characters.',
+            'name.max' => 'El nombre should not be greater than 50 characters.',
+            'tipoPerfil_id' => 'El tipo de Perfil es necesario',
+            'email.required' => 'El email es necesario'
+        ]);
+
+
         $model->create($request->merge(['password' => Hash::make($request->get('password')),
             'IdUsuarioCreacion' => 2,
             'IdUsuarioModificacion' => 2,
