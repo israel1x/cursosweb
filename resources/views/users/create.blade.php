@@ -46,15 +46,15 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('tipoPerfil_id') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-tipoperfil">{{ __('Tipo') }}</label>
-                                    <select type="text" name="tipoPerfil_id" id="input-tipoperfil_id" class="form-control form-control-alternative{{ $errors->has('tipoperfil') ? ' is-invalid' : '' }}" placeholder="{{ __('Tipo') }}" value="{{ old('tipoperfil') }}" required autofocus>
+                                    <select type="text" name="tipoPerfil_id" id="input-tipoperfil_id" class="form-control form-control-alternative{{ $errors->has('tipoPerfil_id') ? ' is-invalid' : '' }}" placeholder="{{ __('Tipo') }}" value="{{ old('tipoPerfil_id') }}" required autofocus>
                                         <option selected>Seleccione el tipo de perfil</option>
                                         <option value="1">Administrador</option>
                                         <option value="2">Estudiante</option>
                                         <option value="3">Profesor</option>
                                     </select>
-                                    @if ($errors->has('tipoperfil'))
+                                    @if ($errors->has('tipoPerfil_id'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('tipoperfil') }}</strong>
+                                            <strong>{{ $errors->first('tipoPerfil_id') }}</strong>
                                         </span>
                                     @endif
                                 </div>

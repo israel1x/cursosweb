@@ -43,8 +43,8 @@ class UserController extends Controller
         //dd($request);
 
         $model->create($request->merge(['password' => Hash::make($request->get('password')),
-            'IdUsuarioCreacion' => 1,
-            'IdUsuarioModificacion' => 1,
+            'IdUsuarioCreacion' => 2,
+            'IdUsuarioModificacion' => 2,
             'fechaCreacion' => '2019-09-08 21:51:20',
             'fechaModificacion' => '2019-09-08 21:51:20'
         ] )->all());

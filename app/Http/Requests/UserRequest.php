@@ -27,7 +27,10 @@ class UserRequest extends FormRequest
     {
         return [
             'name' => [
-                'required', 'min:3'
+                'required', 'min:3', 'max:20' , 'string'
+            ],
+            'lastname' => [
+                'required', 'min:3', 'max:20' , 'string'
             ],
             'email' => [
                 'required', 'email', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)
@@ -35,6 +38,23 @@ class UserRequest extends FormRequest
             'password' => [
                 $this->route()->user ? 'nullable' : 'required', 'confirmed', 'min:6'
             ]
+        ];
+    }
+
+    /**
+     * Custom message for validation
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'email.required' => ' El Email es necesario!',
+            'name.required' => 'El Nombre  es necesario!',
+            'lastname.required' => 'El Apellido  es necesario!',
+            'password.required' => 'El Password es necesario!',
+            'tipoPerfil_id.required' => 'El Perfil de usuario es necesario!'
+
         ];
     }
 }
