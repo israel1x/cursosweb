@@ -13,7 +13,7 @@
                                 <h3 class="mb-0">{{ __('Datos del Usuario') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Back to list') }}</a>
+                                <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Regresar') }}</a>
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ __('Nombres') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombres') }}" value="{{ old('name') }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombres') }}" value="{{ old('name') }}" required autofocus>
 
                                     @if ($errors->has('name'))
                                         <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('lastname') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-lastname">{{ __('Apellidos') }}</label>
-                                    <input type="text" name="lastname" id="input-lastname" class="form-control form-control-alternative{{ $errors->has('lastname') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellidos') }}" value="{{ old('lastname') }}" required autofocus>
+                                    <input type="text" name="lastname" id="input-lastname" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('lastname') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellidos') }}" value="{{ old('lastname') }}" required autofocus>
 
                                     @if ($errors->has('lastname'))
                                         <span class="invalid-feedback" role="alert">

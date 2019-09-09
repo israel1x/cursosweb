@@ -32,6 +32,9 @@ class UserRequest extends FormRequest
             'lastname' => [
                 'required', 'min:3', 'max:20' , 'string'
             ],
+            'tipoPerfil_id' => [
+                'required', 'integer'
+            ],
             'email' => [
                 'required', 'email', Rule::unique((new User)->getTable())->ignore($this->route()->user->id ?? null)
             ],
