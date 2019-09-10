@@ -35,9 +35,11 @@ class AreaConocimientoController extends Controller
      */
     public function store(Request $request, AreaConocimiento $modelArea)
     {
-        $modelArea->create()->all();
+        $modelArea->create($request->merge([
+            'IdUsuarioCreacion' => 1,
+            'IdUsuarioModificacion' => 1])->all());
 
-        return redirect()->route('areaconocimiento.index')->withStatus(__('Areade Conocimiento Creada.'));
+        return redirect()->route('areaconocimiento.index')->withStatus(__('Area de Conocimiento Creada.'));
     }
 
     /**
