@@ -21,10 +21,8 @@ class CreateUsersTable extends Migration
             $table->foreign('tipoPerfil_id')->references('id')->on('tipoPerfil');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('IdUsuarioCreacion');
-            $table->integer('IdUsuarioModificacion');
-            $table->timestamp('fechaCreacion')->nullable();
-            $table->timestamp('fechaModificacion')->nullable();
+            $table->integer('IdUsuarioCreacion')->nullable();
+            $table->integer('IdUsuarioModificacion')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

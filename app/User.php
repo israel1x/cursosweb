@@ -26,7 +26,7 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public $timestamps = false;
+   // public $timestamps = false;
 
     public function isAdmin() {
         return $this->tipoPerfil_id === 1;
