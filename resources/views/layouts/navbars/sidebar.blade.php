@@ -85,13 +85,14 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Administracion') }}
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
                         <span class="nav-link-text" style="color: #f4645f;">{{ __('Admin') }}</span>
                     </a>
 
-                    <div class="collapse show" id="navbar-examples">
+                    <div class="collapse" id="navbar-examples">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('profile.edit') }}">
@@ -108,13 +109,34 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                   {{-- <a class="nav-link" href="#">
                         <i class="ni ni-planet text-blue"></i> {{ __('Cursos') }}
+                    </a>--}}
+                    <a class="nav-link active" href="#navbar-examples2" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <i class="fab fa-laravel text-info" style="color: #f4645f;"></i>
+                        <span class="nav-link-text text-info" style="color: #f4645f;">{{ __('Cursos') }}</span>
                     </a>
+
+                    <div class="collapse" id="navbar-examples2">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('areaconocimiento.index') }}">
+                                    {{ __('Areas de Conocimiento') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('user.index') }}">
+                                    {{ __('Nuevo Curso') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="ni ni-pin-3 text-orange"></i> {{ __('Docentes') }}
+                        <i class="ni ni-pin-3 text-orange"></i> {{ __('Profesores') }}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -122,11 +144,7 @@
                         <i class="ni ni-key-25 text-info"></i> {{ __('Estudiantes') }}
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-circle-08 text-pink"></i> {{ __('Areas de Conocimiento') }}
-                    </a>
-                </li>
+
 
             </ul>
             <!-- Divider -->

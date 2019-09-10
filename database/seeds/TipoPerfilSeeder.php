@@ -15,7 +15,7 @@ class TipoPerfilSeeder extends Seeder
 
 
         DB::table('tipoPerfil')->insert([
-            'perfil' => 'Admin',
+            'perfil' => 'Administrador',
         ]);
 
         DB::table('tipoPerfil')->insert([
@@ -23,7 +23,7 @@ class TipoPerfilSeeder extends Seeder
         ]);
 
         DB::table('tipoPerfil')->insert([
-            'perfil' => 'Usuario',
+            'perfil' => 'Profesor',
         ]);
     }
 }
