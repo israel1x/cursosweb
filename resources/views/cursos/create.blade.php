@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Agregar Usuario')])
+    @include('users.partials.header', ['title' => __('Nuevo Curso')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -10,83 +10,88 @@
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Datos del Usuario') }}</h3>
+                                <h3 class="mb-0">{{ __('Datos del Curso') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('user.index') }}" class="btn btn-sm btn-primary">{{ __('Regresar') }}</a>
+                                <a href="{{ route('curso.index') }}" class="btn btn-sm btn-primary">{{ __('Regresar') }}</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('user.store') }}" autocomplete="off">
+                        <form method="post" action="{{ route('curso.store') }}" autocomplete="off">
 {{--                            @csrf--}}
                             {{ csrf_field() }}
                             
                             <h6 class="heading-small text-muted mb-4">{{ __('Complete el Formulario') }}</h6>
                             <div class="pl-lg-4">
-                                <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-name">{{ __('Nombres') }}</label>
-                                    <input type="text" name="name" id="input-name" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombres') }}" value="{{ old('name') }}" required autofocus>
+                                <div class="form-group{{ $errors->has('descripcion') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-name">{{ __('Descripción') }}</label>
+                                    <input type="text" name="descripcion" id="input-descripcion" pattern="[A-Za-z]{3,25}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('descripcion') ? ' is-invalid' : '' }}" placeholder="{{ __('Descripción') }}" value="{{ old('descripcion') }}" required autofocus>
 
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('descripcion'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('descripcion') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('lastname') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-lastname">{{ __('Apellidos') }}</label>
-                                    <input type="text" name="lastname" id="input-lastname" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('lastname') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellidos') }}" value="{{ old('lastname') }}" required autofocus>
+                                <div class="form-group{{ $errors->has('descripcionlarga') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-lastname">{{ __('Detalles') }}</label>
+                                    <input type="text" name="descripcionlarga" id="input-lastname" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('descripcionlarga') ? ' is-invalid' : '' }}" placeholder="{{ __('Detalles del Curso') }}" value="{{ old('descripcionlarga') }}" required autofocus>
 
-                                    @if ($errors->has('lastname'))
+                                    @if ($errors->has('descripcionlarga'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('lastname') }}</strong>
+                                            <strong>{{ $errors->first('descripcionlarga') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('tipoPerfil_id') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-tipoperfil">{{ __('Tipo') }}</label>
-                                    <select type="text" name="tipoPerfil_id" id="input-tipoperfil_id" class="form-control form-control-alternative{{ $errors->has('tipoPerfil_id') ? ' is-invalid' : '' }}" placeholder="{{ __('Tipo') }}" value="{{ old('tipoPerfil_id') }}" required autofocus>
-                                        <option selected>Seleccione el tipo de perfil</option>
-                                        <option value="1">Administrador</option>
-                                        <option value="2">Estudiante</option>
-                                        <option value="3">Profesor</option>
+                                <div class="form-group{{ $errors->has('prerequisito') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-lastname">{{ __('Prerequisito:') }}</label>
+                                    <input type="text" name="prerequisito" id="input-prerequisito" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('prerequisito') ? ' is-invalid' : '' }}" placeholder="{{ __('Prerequisito') }}" value="{{ old('prerequisito') }}" required autofocus>
+
+                                    @if ($errors->has('prerequisito'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('prerequisito') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('objetivos') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-lastname">{{ __('Objetivos:') }}</label>
+                                    <input type="text" name="objetivos" id="input-objetivos" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('objetivos') ? ' is-invalid' : '' }}" placeholder="{{ __('Objetivos') }}" value="{{ old('objetivos') }}" required autofocus>
+
+                                    @if ($errors->has('objetivos'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('objetivos') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <div class="form-group{{ $errors->has('estado') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-estado">{{ __('Tipo') }}</label>
+                                    <select type="text" name="estado" id="input-estado" class="form-control form-control-alternative{{ $errors->has('estado') ? ' is-invalid' : '' }}" placeholder="{{ __('Estado') }}" value="{{ old('estado') }}" required autofocus>
+                                        <option selected>Seleccione el estado</option>
+                                        <option value="1">Activo</option>
+                                        <option value="2">Desactivado</option>
                                     </select>
-                                    @if ($errors->has('tipoPerfil_id'))
+                                    @if ($errors->has('estado'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('tipoPerfil_id') }}</strong>
+                                            <strong>{{ $errors->first('estado') }}</strong>
                                         </span>
                                     @endif
                                 </div>
 
-
-
-                                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-email">{{ __('Email') }}</label>
-                                    <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required>
-
-                                    @if ($errors->has('email'))
+                                <div class="form-group{{ $errors->has('areaconocimiento_id') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-areaconocimiento_id">{{ __('Area de Conocimiento') }}</label>
+                                    <select type="text" name="areaconocimiento_id" id="input-areaconocimiento_id" class="form-control form-control-alternative{{ $errors->has('areaconocimiento_id') ? ' is-invalid' : '' }}" placeholder="{{ __('Area de Conocimiento') }}" value="{{ old('areaconocimiento_id') }}" required autofocus>
+                                        <option selected>Seleccione el area</option>
+                                        <option value="1">Java</option>
+                                        <option value="2">Python</option>
+                                    </select>
+                                    @if ($errors->has('areaconocimiento_id'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
+                                            <strong>{{ $errors->first('areaconocimiento_id') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
-                                    <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="" required>
-                                    
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Confirmar Password') }}</label>
-                                    <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirmar Password') }}" value="" required>
-                                </div>
-
-                                <input  hidden type="text" name="IdUsuarioCreacion" id="input-IdUsuarioCreacion" class="form-control form-control-alternative{{ $errors->has('lastname') ? ' is-invalid' : '' }}" value="'2'" >
 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Guardar') }}</button>

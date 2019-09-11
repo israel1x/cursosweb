@@ -38,10 +38,21 @@ class CursoController extends Controller
     public function store(Request $request)
     {
         $curso = new Curso();
-        $curso->descripcion = $request->input('descripcion');
+       // $curso->id = 7;
+        $curso->descripcion      = $request->input('descripcion');
+        $curso->descripcionlarga = $request->input('descripcionlarga');
+        $curso->prerequisito     = $request->input('prerequisito');
+        $curso->objetivos        = $request->input('objetivos');
+        $curso->estado           = $request->input('estado');
+        $curso->areaconocimiento_id = $request->input('areaconocimiento_id');
+        $curso->IdUsuarioCreacion = 1;
+        $curso->IdUsuarioModificacion = 1;
+        //$curso->descripcion = $request->input('descripcion');
+        //$curso->descripcion = $request->input('descripcion');
+
         $curso->save();
 
-        return redirect()->route('cursos.index')->withStatus(__('Curso Creado.'));
+        return redirect()->route('curso.index')->withStatus(__('Curso Creado.'));
 
 
     }
