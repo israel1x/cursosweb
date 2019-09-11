@@ -14,7 +14,9 @@ class CursoController extends Controller
      */
     public function index()
     {
-        //
+        $cursos = Curso::all();
+
+        return view('cursos.index', compact('cursos'));
     }
 
     /**
@@ -24,7 +26,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        //
+        return view('cursos.create');
     }
 
     /**
@@ -35,7 +37,13 @@ class CursoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $curso = new Curso();
+        $curso->descripcion = $request->input('descripcion');
+        $curso->save();
+
+        return redirect()->route('cursos.index')->withStatus(__('Curso Creado.'));
+
+
     }
 
     /**

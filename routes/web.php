@@ -26,5 +26,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
     Route::resource('areaconocimiento', 'AreaConocimientoController', ['except' => ['show']]);
+    Route::resource('curso', 'CursoController', ['except' => ['show']]);
 });
 
