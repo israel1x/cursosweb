@@ -14,7 +14,7 @@ class EstudiantesTableSeeder extends Seeder
     {
         DB::table('estudiantes')->insert([
 
-            'name' => 'Manuel',
+            'nombre' => 'Manuel',
             'apellido' => 'Lopez',
             'cedula' => 'manuellopez@gmail.com',
             'email' => 'manuellopez@gmail.com'
