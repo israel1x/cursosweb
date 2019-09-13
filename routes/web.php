@@ -27,5 +27,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
     Route::resource('areaconocimiento', 'AreaConocimientoController', ['except' => ['show']]);
     Route::resource('curso', 'CursoController', ['except' => ['show']]);
+    Route::resource('estudiante', 'EstudianteController', ['except' => ['show']]);
 });
 

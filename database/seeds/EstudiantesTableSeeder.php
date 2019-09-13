@@ -16,7 +16,7 @@ class EstudiantesTableSeeder extends Seeder
 
             'nombre' => 'Manuel',
             'apellido' => 'Lopez',
-            'cedula' => 'manuellopez@gmail.com',
+            'cedula' => '0988829914',
             'email' => 'manuellopez@gmail.com'
         ]);
     }

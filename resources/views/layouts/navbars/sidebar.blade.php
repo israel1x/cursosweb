@@ -164,7 +164,7 @@
                     <div class="collapse" id="navbar-examples4">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('areaconocimiento.index') }}">
+                                <a class="nav-link" href="{{ route('estudiante.index') }}">
                                     {{ __('Ingresar Estudiante') }}
                                 </a>
                             </li>

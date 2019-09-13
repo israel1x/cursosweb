@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Estudiante;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EstudianteController extends Controller
 {
@@ -12,9 +13,9 @@ class EstudianteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Estudiante $model)
     {
-        //
+        return view('estudiantes.index', ['estudiantes' => $model->paginate(15)]);
     }
 
     /**
@@ -24,7 +25,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        //
+        return view('estudiantes.create');
     }
 
     /**
@@ -33,9 +34,15 @@ class EstudianteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Estudiante $model)
     {
-        //
+        $model->create($request->merge([
+            'IdUsuarioCreacion' => 2,
+            'IdUsuarioModificacion' => 2
+
+        ] )->all());
+
+        return redirect()->route('estudiante.index')->withStatus(__('Estudiante Creado Exitosamente.'));
     }
 
     /**
