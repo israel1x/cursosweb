@@ -64,7 +64,7 @@ class EstudianteController extends Controller
      */
     public function edit(Estudiante $estudiante)
     {
-        //
+        return view('estudiantes.edit', compact('estudiante'));
     }
 
     /**
@@ -76,7 +76,9 @@ class EstudianteController extends Controller
      */
     public function update(Request $request, Estudiante $estudiante)
     {
-        //
+        $estudiante->update();
+
+        return redirect()->route('estudiante.index')->withStatus(__('Se Guardaron los cambios del estudiante.'));
     }
 
     /**
@@ -87,6 +89,8 @@ class EstudianteController extends Controller
      */
     public function destroy(Estudiante $estudiante)
     {
-        //
+        $estudiante->delete();
+
+        return redirect()->route('estudiante.index')->withStatus(__('Estudiante Borrado.'));
     }
 }
