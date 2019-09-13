@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
 @section('content')
-    @include('layouts.headers.cardsestudiante')
+    @include('layouts.headers.cardsprofe')
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -10,10 +10,10 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Todos los Estudiantes') }}</h3>
+                                <h3 class="mb-0">{{ __('Todos los Profesores') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('estudiante.create') }}" class="btn btn-sm btn-primary">{{ __('Crear Nuevo Estudiante') }}</a>
+                                <a href="{{ route('profesor.create') }}" class="btn btn-sm btn-primary">{{ __('Crear Nuevo Profesor') }}</a>
                             </div>
                         </div>
                     </div>
@@ -36,13 +36,18 @@
                                     <th scope="col">{{ __('Nombres') }}</th>
                                     <th scope="col">{{ __('Apellidos') }}</th>
                                     <th scope="col">{{ __('Cédula') }}</th>
+                                    <th scope="col">{{ __('Fecha de Nacimiento') }}</th>
+                                    <th scope="col">{{ __('Titulo') }}</th>
                                     <th scope="col">{{ __('Email') }}</th>
+                                    <th scope="col">{{ __('Dirección') }}</th>
+                                    <th scope="col">{{ __('Telefono') }}</th>
+                                    <th scope="col">{{ __('Celular') }}</th>
 
                                   {{--  <th scope="col">{{ __('Creado') }}</th>--}}
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($estudiantes as $estudiante)
+                               {{-- @foreach ($estudiantes as $estudiante)
                                     <tr>
                                         <td>{{ $estudiante->nombre }}</td>
                                         <td>{{ $estudiante->apellido }}</td>
@@ -50,15 +55,15 @@
                                         <td>
                                             <a href="mailto:{{ $estudiante->email }}">{{ $estudiante->email }}</a>
                                         </td>
-                                       {{-- <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
-                                        <td>{{ $user->updated_at->format('d/m/Y H:i') }}</td>--}}
+                                       --}}{{-- <td>{{ $user->created_at->format('d/m/Y H:i') }}</td>
+                                        <td>{{ $user->updated_at->format('d/m/Y H:i') }}</td>--}}{{--
                                         <td class="text-right">
                                             <div class="dropdown">
                                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                                  {{--  @if ($estudiante->id != auth()->id())--}}
+                                                  --}}{{--  @if ($estudiante->id != auth()->id())--}}{{--
                                                         <form action="{{ route('estudiante.destroy', $estudiante) }}" method="post">
                                                             {{ csrf_field() }}
                                                          @method('delete')
@@ -69,14 +74,14 @@
                                                                 {{ __('Delete') }}
                                                             </button>
                                                         </form>    
-{{--                                                    @else--}}
-{{--                                                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Edit') }}</a>--}}
-{{--                                                    @endif--}}
+--}}{{--                                                    @else--}}{{--
+--}}{{--                                                        <a class="dropdown-item" href="{{ route('profile.edit') }}">{{ __('Edit') }}</a>--}}{{--
+--}}{{--                                                    @endif--}}{{--
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endforeach--}}
                             </tbody>
                         </table>
                     </div>

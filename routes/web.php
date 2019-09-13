@@ -28,5 +28,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('areaconocimiento', 'AreaConocimientoController', ['except' => ['show']]);
     Route::resource('curso', 'CursoController', ['except' => ['show']]);
     Route::resource('estudiante', 'EstudianteController', ['except' => ['show']]);
+    Route::resource('profesor', 'ProfesorController', ['except' => ['show']]);
 });
 

@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Management')])
 
 @section('content')
-    @include('users.partials.header', ['title' => __('Ingresar Estudiante')])
+    @include('users.partials.header', ['title' => __('Ingresar Profesor')])
 
     <div class="container-fluid mt--7">
         <div class="row">
@@ -10,23 +10,23 @@
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Datos del Estudiante') }}</h3>
+                                <h3 class="mb-0">{{ __('Datos del Profesor') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('estudiante.index') }}" class="btn btn-sm btn-primary">{{ __('Regresar') }}</a>
+                                <a href="{{ route('profesor.index') }}" class="btn btn-sm btn-primary">{{ __('Regresar') }}</a>
                             </div>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('estudiante.store') }}" autocomplete="off">
+                        <form method="post" action="{{ route('profesor.store') }}" autocomplete="off">
 {{--                            @csrf--}}
                             {{ csrf_field() }}
                             
                             <h6 class="heading-small text-muted mb-4">{{ __('Complete el Formulario') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('cedula') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-cedula">{{ __('Cedula') }}</label>
-                                    <input type="text" name="cedula" id="input-cedula" pattern="[0-9]{10}" title="Solo se acepta maximo 10 digitos" class="form-control form-control-alternative{{ $errors->has('cedula') ? ' is-invalid' : '' }}" placeholder="{{ __('Cédula del Estudiante') }}" value="{{ old('cedula') }}" required autofocus>
+                                    <label class="form-control-label" for="input-cedula">{{ __('Cédula') }}</label>
+                                    <input type="text" name="cedula" id="input-cedula" pattern="[0-9]{10}" title="Solo se acepta maximo 10 digitos" class="form-control form-control-alternative{{ $errors->has('cedula') ? ' is-invalid' : '' }}" placeholder="{{ __('Cédula del Profesor') }}" value="{{ old('cedula') }}" required autofocus>
 
                                     @if ($errors->has('cedula'))
                                         <span class="invalid-feedback" role="alert">
@@ -34,23 +34,43 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('nombre') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-nombre">{{ __('Nombres') }}</label>
-                                    <input type="text" name="nombre" id="input-nombre" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('nombre') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombre del Estudiante') }}" value="{{ old('nombre') }}" required autofocus>
+                                <div class="form-group{{ $errors->has('nombres') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-nombres">{{ __('Nombres') }}</label>
+                                    <input type="text" name="nombres" id="input-nombres" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('nombres') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombres del Profesor') }}" value="{{ old('nombres') }}" required autofocus>
 
-                                    @if ($errors->has('nombre'))
+                                    @if ($errors->has('nombres'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('nombre') }}</strong>
+                                            <strong>{{ $errors->first('nombres') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group{{ $errors->has('apellido') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-apellido">{{ __('Apellidos') }}</label>
-                                    <input type="text" name="apellido" id="input-apellido" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('apellido') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellidos del Estudiante') }}" value="{{ old('apellido') }}" required autofocus>
+                                <div class="form-group{{ $errors->has('apellidos') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-apellidos">{{ __('Apellidos') }}</label>
+                                    <input type="text" name="apellidos" id="input-apellidos" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('apellidos') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellidos del Profesor') }}" value="{{ old('apellidos') }}" required autofocus>
 
-                                    @if ($errors->has('apellido'))
+                                    @if ($errors->has('apellidos'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('apellido') }}</strong>
+                                            <strong>{{ $errors->first('apellidos') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-apellidos">{{ __('Fecha de Nacimiento') }}</label>
+                                    <input type="text" name="fecha_nacimiento" id="input-apellidos" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('fecha_nacimiento') ? ' is-invalid' : '' }}" placeholder="{{ __('Fecha de Nacimiento del Profesor') }}" value="{{ old('fecha_nacimiento') }}" required autofocus>
+
+                                    @if ($errors->has('fecha_nacimiento'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="form-group{{ $errors->has('titulo') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-titulo">{{ __('Titulo') }}</label>
+                                    <input type="text" name="titulo" id="input-titulo" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('titulo') ? ' is-invalid' : '' }}" placeholder="{{ __('Titulo del Profesor') }}" value="{{ old('titulo') }}" required autofocus>
+
+                                    @if ($errors->has('titulo'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('titulo') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -82,24 +102,40 @@
                                         </span>
                                     @endif
                                 </div>
-                                {{--
-                                <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
-                                    <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="" required>
-                                    
-                                    @if ($errors->has('password'))
+
+                                <div class="form-group{{ $errors->has('direccion') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-direccion">{{ __('Dirección') }}</label>
+                                    <input type="text" name="direccion" id="input-direccion" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('direccion') ? ' is-invalid' : '' }}" placeholder="{{ __('Dirección del Profesor') }}" value="{{ old('direccion') }}" required autofocus>
+
+                                    @if ($errors->has('direccion'))
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
+                                            <strong>{{ $errors->first('direccion') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Confirmar Password') }}</label>
-                                    <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirmar Password') }}" value="" required>
+
+                                <div class="form-group{{ $errors->has('telf_convencional') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-direccion">{{ __('Teléfono Convencional') }}</label>
+                                    <input type="text" name="telf_convencional" id="input-telf_convencional" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('telf_convencional') ? ' is-invalid' : '' }}" placeholder="{{ __('Teléfono Convencional') }}" value="{{ old('telf_convencional') }}" required autofocus>
+
+                                    @if ($errors->has('telf_convencional'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('telf_convencional') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
 
-                                <input  hidden type="text" name="IdUsuarioCreacion" id="input-IdUsuarioCreacion" class="form-control form-control-alternative{{ $errors->has('lastname') ? ' is-invalid' : '' }}" value="'2'" >
---}}
+                                <div class="form-group{{ $errors->has('celular') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-celular">{{ __('Celular') }}</label>
+                                    <input type="text" name="celular" id="input-celular" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('direccion') ? ' is-invalid' : '' }}" placeholder="{{ __('Celular del Profesor') }}" value="{{ old('celular') }}" required autofocus>
+
+                                    @if ($errors->has('celular'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('celular') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Guardar') }}</button>
                                 </div>
