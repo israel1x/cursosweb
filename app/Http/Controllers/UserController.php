@@ -40,12 +40,12 @@ class UserController extends Controller
     public function store(UserRequest $request, User $model)
     {
         //$data = $request->all();
-        //dd($request);
-
+       // dd($request);
+/*
         request()->validate([
             'name'     => 'required|min:3|max:20',
             'lastname' => 'required|min:3|max:20',
-            'tipoPerfil_id' => 'required',
+            'tipoPerfil_id' => 'required|integer',
             'email'    => 'required|email|unique:users',
             'password' => 'required|min:6',
             'confirm_password' => 'required|min:6|max:20|same:password',
@@ -55,7 +55,7 @@ class UserController extends Controller
             'name.max' => 'El nombre should not be greater than 50 characters.',
             'tipoPerfil_id' => 'El tipo de Perfil es necesario',
             'email.required' => 'El email es necesario'
-        ]);
+        ]);*/
 
 
         $model->create($request->merge(['password' => Hash::make($request->get('password')),

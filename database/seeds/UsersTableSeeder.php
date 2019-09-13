@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
         //$idtipoperfil = DB::table('tipoPerfil')->where('perfil', 'Admin')->value('id'); ***
 
         DB::table('users')->insert([
-
+            //'id'=> 1,
             'name' => 'Juan',
             'lastname' => 'Pablo',
             //'tipoPerfil_id' => $idtipoperfil ****,

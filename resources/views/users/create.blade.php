@@ -19,7 +19,7 @@
                     </div>
                     <div class="card-body">
                         <form method="post" action="{{ route('user.store') }}" autocomplete="off">
-{{--                            @csrf--}}
+
                             {{ csrf_field() }}
                             
                             <h6 class="heading-small text-muted mb-4">{{ __('Complete el Formulario') }}</h6>
@@ -85,8 +85,10 @@
                                     <label class="form-control-label" for="input-password-confirmation">{{ __('Confirmar Password') }}</label>
                                     <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirmar Password') }}" value="" required>
                                 </div>
+{{--
 
                                 <input  hidden type="text" name="IdUsuarioCreacion" id="input-IdUsuarioCreacion" class="form-control form-control-alternative{{ $errors->has('lastname') ? ' is-invalid' : '' }}" value="'2'" >
+--}}
 
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Guardar') }}</button>
