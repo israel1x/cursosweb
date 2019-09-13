@@ -27,8 +27,10 @@ class Curso extends Model
     }
 
     // Devuelve lista de niveles que tiene el curso
-    public function todosLosNiveles() {
-        // return $this->belongsTo(TipoPerfil::class, 'tipoPerfil_id');
+
+
+    public function niveles() {
+        return $this->hasMany('App\Nivel', 'curso_id');
     }
 
 

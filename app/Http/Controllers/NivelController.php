@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\Curso;
 use App\Nivel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
 
 class NivelController extends Controller
 {
@@ -14,9 +16,13 @@ class NivelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Curso $curso)
     {
-        return view('cursos.niveles');
+
+        $niveles = DB::table('nivel')->where('curso_id',$curso->id)->get();
+
+        //dd($niveles);
+        return view('cursos.niveles', compact('niveles'));
     }
 
     /**

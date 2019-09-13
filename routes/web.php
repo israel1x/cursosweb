@@ -32,6 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('profesor', 'ProfesorController', ['except' => ['show']]);
    // Route::get('curso/niveles/', 'CursoController@showniveles');
    // Route::post('curso/{curso}/nivel', 'CursoController@storenivel');
-    Route::resource('nivel', 'NivelController', ['except' => ['show']]);
+    //Route::resource('nivel', 'NivelController', ['except' => ['show']]);
+    Route::get('nivel/{curso}/niveles', 'NivelController@index')->name('nivel.index');
 });
 
