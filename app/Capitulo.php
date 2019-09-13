@@ -16,4 +16,9 @@ class Capitulo extends Model
      */
     protected $fillable = [
         'descripcion','descripcion_larga','nivel_id', 'estado', 'created_at', 'updated_at' ];
+
+
+    public function nivel() {
+        return $this->belongsTo('App\Nivel');
+    }
 }

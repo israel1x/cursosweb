@@ -10,10 +10,10 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h3 class="mb-0">{{ __('Todos los Cursos') }}</h3>
+                                <h3 class="mb-0">{{ __('Niveles del Curso') }}</h3>
                             </div>
                             <div class="col-4 text-right">
-                                <a href="{{ route('curso.create') }}" class="btn btn-sm btn-primary">{{ __('Nuevo Curso') }}</a>
+                                <a href="{{ route('curso.index') }}" class="btn btn-sm btn-primary">{{ __('Regresar') }}</a>
                             </div>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="row" style="margin-left: 6px; margin-right: 6px;">
-                    @foreach($cursos as $curso)
+                   {{-- @foreach($cursos as $curso)
 
                         <div class="col-xl-3 col-lg-6" style="margin-bottom: 6px;">
                             <div class="card card-stats mb-4 mb-xl-0">
@@ -52,12 +52,12 @@
                                          <span class="text-success mr-2"></i>Prerequisito:</span>
                                          <span class="text-nowrap">{{ $curso->prerequisito }}</span>
                                      </p>
-                                    <a href="{{ route('nivel.index') }}" class="btn btn-sm btn-primary">Contenido</a>
+                                    <a href="{{ route('curso.niveles', $curso) }}" class="btn btn-sm btn-primary">Contenido</a>
                                 </div>
                             </div>
                         </div>
 
-                    @endforeach
+                    @endforeach--}}
                     </div>
 
 
@@ -124,6 +124,17 @@
                     </div>
 --}}
 
+
+                    <div class="card-header border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">{{ __('') }}</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                                <a href="{{ route('curso.index') }}" class="btn btn-sm btn-primary">{{ __('Agregar Nivel') }}</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

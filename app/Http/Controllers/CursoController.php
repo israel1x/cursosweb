@@ -101,4 +101,16 @@ class CursoController extends Controller
     {
         //
     }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Curso  $curso
+     * @return \Illuminate\Http\Response
+     */
+    public function showniveles()
+    {
+        return view('cursos.niveles');
+    }
 }

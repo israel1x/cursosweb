@@ -12,4 +12,9 @@ class Nivel extends Model
     protected $fillable = [
         'descripcion', 'precio','curso_id', 'estado', 'IdUsuarioModificacion'];
 
+
+    public function capitulos() {
+        return $this->hasMany('App\Capitulo');
+    }
+
 }

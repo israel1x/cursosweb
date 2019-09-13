@@ -26,8 +26,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
     Route::resource('areaconocimiento', 'AreaConocimientoController', ['except' => ['show']]);
+   // Route::get('curso/niveles/', 'CursoController@showniveles');
     Route::resource('curso', 'CursoController', ['except' => ['show']]);
     Route::resource('estudiante', 'EstudianteController', ['except' => ['show']]);
     Route::resource('profesor', 'ProfesorController', ['except' => ['show']]);
+   // Route::get('curso/niveles/', 'CursoController@showniveles');
+   // Route::post('curso/{curso}/nivel', 'CursoController@storenivel');
+    Route::resource('nivel', 'NivelController', ['except' => ['show']]);
 });
 
