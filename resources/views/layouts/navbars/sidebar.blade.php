@@ -126,7 +126,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('curso.index') }}">
-                                    {{ __('Nuevo Curso') }}
+                                    {{ __('Crear Curso') }}
                                 </a>
                             </li>
                         </ul>
@@ -135,14 +135,58 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-pin-3 text-orange"></i> {{ __('Profesores') }}
+                    <a class="nav-link" href="#navbar-examples3" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <i class="ni ni-pin-3 text-orange"></i>
+                        <span class="nav-link-text text-info" style="color: #f4645f;">{{ __('Profesores') }}</span>
                     </a>
+
+                    <div class="collapse" id="navbar-examples3">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('areaconocimiento.index') }}">
+                                    {{ __('Ingresar Profesor') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('curso.index') }}">
+                                    {{ __('Ingresar Notas') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="ni ni-key-25 text-info"></i> {{ __('Estudiantes') }}
+                    <a class="nav-link" href="#navbar-examples4"  data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
+                        <i class="ni ni-key-25 text-info"></i>
+                        <span class="nav-link-text text-info" style="color: #f4645f;">{{ __('Estudiantes') }}</span>
                     </a>
+
+                    <div class="collapse" id="navbar-examples4">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('areaconocimiento.index') }}">
+                                    {{ __('Ingresar Estudiante') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('curso.index') }}">
+                                    {{ __('Ingresar Notas') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('areaconocimiento.index') }}">
+                                    {{ __('Mis Cursos') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('curso.index') }}">
+                                    {{ __('Calificaciones') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
                 </li>
 
 

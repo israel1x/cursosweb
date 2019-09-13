@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
         //$idtipoperfil = DB::table('tipoPerfil')->where('perfil', 'Admin')->value('id'); ***
 
         DB::table('users')->insert([
-            'id' => 1,
+
             'name' => 'Juan',
             'lastname' => 'Pablo',
             //'tipoPerfil_id' => $idtipoperfil ****,
@@ -31,9 +31,8 @@ class UsersTableSeeder extends Seeder
            // 'email_verified_at' => now(),
             'password' => Hash::make('cursos'),
             'IdUsuarioCreacion' =>  1 ,
-            'IdUsuarioModificacion' => 1 ,
-            'fechaCreacion' => Carbon::now() ,
-            'fechaModificacion' => Carbon::now(),
+            'IdUsuarioModificacion' => 1
+
 
         ]);
     }

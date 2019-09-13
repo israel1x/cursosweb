@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
 
         ]);*/
 
-        //$this->call([TipoPerfilSeeder::class]);
-       // $this->call([UsersTableSeeder::class]);
+        $this->call([TipoPerfilSeeder::class]);
+        $this->call([UsersTableSeeder::class]);
         $this->call([AreaConocimientoSeeder::class]);
     }
 

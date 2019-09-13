@@ -12,7 +12,7 @@ class AreaConocimientoSeeder extends Seeder
     public function run()
     {
        DB::table('area_conocimiento')->insert([
-           'id' => 1,
+
            'descripcion' => 'Python',
            'estado' => 'Activo',
            'IdUsuarioCreacion' =>  1 ,
