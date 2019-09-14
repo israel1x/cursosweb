@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('nombres') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-nombres">{{ __('Nombres') }}</label>
-                                    <input type="text" name="nombres" id="input-nombres" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('nombres') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombres del Profesor') }}" value="{{ old('nombres') }}" required autofocus>
+                                    <input type="text" name="nombres" id="input-nombres" pattern="[A-Za-z].{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('nombres') ? ' is-invalid' : '' }}" placeholder="{{ __('Nombres del Profesor') }}" value="{{ old('nombres') }}" required autofocus>
 
                                     @if ($errors->has('nombres'))
                                         <span class="invalid-feedback" role="alert">
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('apellidos') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-apellidos">{{ __('Apellidos') }}</label>
-                                    <input type="text" name="apellidos" id="input-apellidos" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('apellidos') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellidos del Profesor') }}" value="{{ old('apellidos') }}" required autofocus>
+                                    <input type="text" name="apellidos" id="input-apellidos" pattern="[A-Za-z].{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('apellidos') ? ' is-invalid' : '' }}" placeholder="{{ __('Apellidos del Profesor') }}" value="{{ old('apellidos') }}" required autofocus>
 
                                     @if ($errors->has('apellidos'))
                                         <span class="invalid-feedback" role="alert">
@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('titulo') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-titulo">{{ __('Titulo') }}</label>
-                                    <input type="text" name="titulo" id="input-titulo" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('titulo') ? ' is-invalid' : '' }}" placeholder="{{ __('Titulo del Profesor') }}" value="{{ old('titulo') }}" required autofocus>
+                                    <input type="text" name="titulo" id="input-titulo" pattern="[A-Za-z].{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('titulo') ? ' is-invalid' : '' }}" placeholder="{{ __('Titulo del Profesor') }}" value="{{ old('titulo') }}" required autofocus>
 
                                     @if ($errors->has('titulo'))
                                         <span class="invalid-feedback" role="alert">
@@ -91,7 +91,7 @@
 
                                 <div class="form-group{{ $errors->has('direccion') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-direccion">{{ __('Dirección') }}</label>
-                                    <input type="text" name="direccion" id="input-direccion" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('direccion') ? ' is-invalid' : '' }}" placeholder="{{ __('Dirección del Profesor') }}" value="{{ old('direccion') }}" required autofocus>
+                                    <input type="text" name="direccion" id="input-direccion" pattern="[A-Za-z].{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('direccion') ? ' is-invalid' : '' }}" placeholder="{{ __('Dirección del Profesor') }}" value="{{ old('direccion') }}" required autofocus>
 
                                     @if ($errors->has('direccion'))
                                         <span class="invalid-feedback" role="alert">
@@ -102,7 +102,7 @@
 
                                 <div class="form-group{{ $errors->has('telf_convencional') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-direccion">{{ __('Teléfono Convencional') }}</label>
-                                    <input type="text" name="telf_convencional" id="input-telf_convencional" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('telf_convencional') ? ' is-invalid' : '' }}" placeholder="{{ __('Teléfono Convencional') }}" value="{{ old('telf_convencional') }}" required autofocus>
+                                    <input type="text" name="telf_convencional" id="input-telf_convencional" pattern="[0-9]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('telf_convencional') ? ' is-invalid' : '' }}" placeholder="{{ __('Teléfono Convencional') }}" value="{{ old('telf_convencional') }}" required autofocus>
 
                                     @if ($errors->has('telf_convencional'))
                                         <span class="invalid-feedback" role="alert">
@@ -113,7 +113,7 @@
 
                                 <div class="form-group{{ $errors->has('celular') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-celular">{{ __('Celular') }}</label>
-                                    <input type="text" name="celular" id="input-celular" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('direccion') ? ' is-invalid' : '' }}" placeholder="{{ __('Celular del Profesor') }}" value="{{ old('celular') }}" required autofocus>
+                                    <input type="text" name="celular" id="input-celular" pattern="[0-9]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('direccion') ? ' is-invalid' : '' }}" placeholder="{{ __('Celular del Profesor') }}" value="{{ old('celular') }}" required autofocus>
 
                                     @if ($errors->has('celular'))
                                         <span class="invalid-feedback" role="alert">
