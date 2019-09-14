@@ -56,7 +56,8 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-apellidos">{{ __('Fecha de Nacimiento') }}</label>
-                                    <input type="text" name="fecha_nacimiento" id="input-apellidos" pattern="[A-Za-z]{3,20}" title="Solo se aceptan palabras mayores a 3 caracteres" class="form-control form-control-alternative{{ $errors->has('fecha_nacimiento') ? ' is-invalid' : '' }}" placeholder="{{ __('Fecha de Nacimiento del Profesor') }}" value="{{ old('fecha_nacimiento') }}" required autofocus>
+
+                                    <input  class="form-control  datepicker"  type="text" name="fecha_nacimiento" id="input-apellidos"  title="Solo se aceptan palabras mayores a 3 caracteres"  required autofocus>
 
                                     @if ($errors->has('fecha_nacimiento'))
                                         <span class="invalid-feedback" role="alert">
@@ -74,22 +75,7 @@
                                         </span>
                                     @endif
                                 </div>
-                                {{--
-                                <div class="form-group{{ $errors->has('tipoPerfil_id') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-tipoperfil">{{ __('Tipo') }}</label>
-                                    <select type="text" name="tipoPerfil_id" id="input-tipoperfil_id" class="form-control form-control-alternative{{ $errors->has('tipoPerfil_id') ? ' is-invalid' : '' }}" placeholder="{{ __('Tipo') }}" value="{{ old('tipoPerfil_id') }}" required autofocus>
-                                        <option selected>Seleccione el tipo de perfil</option>
-                                        <option value="1">Administrador</option>
-                                        <option value="2">Estudiante</option>
-                                        <option value="3">Profesor</option>
-                                    </select>
-                                    @if ($errors->has('tipoPerfil_id'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('tipoPerfil_id') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
---}}
+
 
 
                                 <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">

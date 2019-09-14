@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use App\Profesor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,11 +35,30 @@ class ProfesorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Profesor $model)
     {
 
-        $response  = DB::table('nivel')->where('curso_id',$curso->id)->get();
-        return redirect()->route('profesores.index')->withStatus(__('Profesor Creado Exitosamente.'));
+
+
+
+        $date = Carbon::now();
+        $profesor = new Profesor();
+
+        $profesor->cedula           = $request->input('cedula');
+        $profesor->nombres          = $request->input('nombres');
+        $profesor->apellidos        = $request->input('apellidos');
+        $profesor->fecha_nacimiento = $date;
+        $profesor->titulo           = $request->input('titulo');
+        $profesor->email            = $request->input('email');
+        $profesor->direccion         = $request->input('direccion');
+        $profesor->telf_convencional = $request->input('telf_convencional');
+        $profesor->celular           = $request->input('celular');;
+        //$curso->descripcion = $request->input('descripcion');
+        //$curso->descripcion = $request->input('descripcion');
+
+        $profesor->save();
+
+        return redirect()->route('profesor.index')->withStatus(__('Profesor Creado Exitosamente.'));
 
     }
 

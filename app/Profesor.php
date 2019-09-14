@@ -9,6 +9,8 @@ class Profesor extends Model
 {
     use Notifiable;
 
+    protected $table = 'profesores';
+
     /**
      * The attributes that are mass assignable.
      *
