@@ -15,8 +15,8 @@ class Nivel extends Model
         'descripcion', 'precio','curso_id', 'estado', 'IdUsuarioModificacion'];
 
 
-    public function curso() {
-        return $this->belongsTo('App\Curso');
+    public function curso() { //cambio de fk
+        return $this->belongsTo('App\Curso', 'curso_id');
     }
 
     public function capitulos() {

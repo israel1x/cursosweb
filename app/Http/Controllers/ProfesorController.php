@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Profesor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProfesorController extends Controller
 {
@@ -36,7 +37,10 @@ class ProfesorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $response  = DB::table('nivel')->where('curso_id',$curso->id)->get();
+        return redirect()->route('profesores.index')->withStatus(__('Profesor Creado Exitosamente.'));
+
     }
 
     /**

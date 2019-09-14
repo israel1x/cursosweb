@@ -52,6 +52,8 @@
 
                                      </p>
                                     <a href="#" class="btn btn-sm btn-primary">Capitulos</a>
+
+{{--                                    <a href="{{ route('capitulo.index', ['$nivel' => $nivel ]) }}" class="btn btn-sm btn-primary">Capitulos</a>--}}
                                 </div>
                             </div>
                         </div>

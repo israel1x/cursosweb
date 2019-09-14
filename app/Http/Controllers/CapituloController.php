@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Capitulo;
+use App\Nivel;
 use Illuminate\Http\Request;
 
 class CapituloController extends Controller
@@ -12,9 +13,13 @@ class CapituloController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Nivel $nivel)
     {
-        //
+       dd($nivel);
+        //$capitulos = $nivel->capitulos();
+
+       // return view('niveles.index', compact('capitulos'));
+        return view('niveles.index');
     }
 
     /**

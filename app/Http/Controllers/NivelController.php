@@ -21,7 +21,7 @@ class NivelController extends Controller
 
         $niveles = DB::table('nivel')->where('curso_id',$curso->id)->get();
 
-        //dd($niveles);
+       // dd($niveles);
         return view('cursos.niveles', compact('niveles'));
     }
 
