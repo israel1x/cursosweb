@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
 
         ]);*/
 
-        /*$this->call([TipoPerfilSeeder::class]);
+        $this->call([TipoPerfilSeeder::class]);
         $this->call([UsersTableSeeder::class]);
         $this->call([AreaConocimientoSeeder::class]);
         $this->call([EstudiantesTableSeeder::class]);
         $this->call([NivelSeeder::class]);
-        $this->call([CapitulosSeeder::class]);*/
+        $this->call([CapitulosSeeder::class]);
         $this->call([ProfesoresSeeder::class]);
     }
 
